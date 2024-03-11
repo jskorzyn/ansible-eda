@@ -1,0 +1,15 @@
+---
+- name: Check Web URL
+  ansible.eda.url_check:
+    urls:
+      - http://10.28.69.250:8080
+    delay: 10
+  rules:
+   - name: Web App is down
+     condition: 
+       event.url_check.status == "down"
+     action:
+       debug:
+         msg: "Web Down Message: {{ event.payload }}"
+#       run_playbook:
+#         name: redeploy_mobile_app.yml
