@@ -1,0 +1,10 @@
+---
+- name: Fix Web App
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Start Web service
+      ansible.builtin.systemd:
+        name: nginx
+        state: started
