@@ -7,12 +7,12 @@
           - http://10.28.69.250:8080
         delay: 60
   rules:
-    - name: Web App is down
-      condition:
-        event.url_check.status == "down"
-      action:
-        debug:
-          msg: "WEB IS DOWN"
+    # - name: Web App is down
+    #   condition:
+    #     event.url_check.status == "down"
+    #   action:
+    #     debug:
+    #       msg: "WEB IS DOWN"
 
     - name: Fix Web App
       condition:
