@@ -4,7 +4,7 @@
   sources:
     - ansible.eda.url_check:
         urls:
-          - http://10.28.69.250:8080
+          - http://10.28.69.194:8080
         delay: 60
   rules:
     # - name: Web App is down
