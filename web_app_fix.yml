@@ -8,3 +8,6 @@
       ansible.builtin.systemd:
         name: nginx
         state: started
+
+    - name: Wait a moment
+      ansible.builtin.pause: 15
