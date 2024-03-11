@@ -4,10 +4,6 @@
   gather_facts: false
 
   tasks:
-    - name: Wait a moment
-      ansible.builtin.pause:
-        seconds: 15
-
     - name: Start Web service
       ansible.builtin.systemd:
         name: nginx
