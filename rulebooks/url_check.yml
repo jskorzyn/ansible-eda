@@ -12,6 +12,6 @@
         event.url_check.status == "down"
       action:
         debug:
-          msg: "Web Down Message: {{ event.payload }}"
+          msg: "WEB IS DOWN"
 #       run_playbook:
 #         name: redeploy_mobile_app.yml
