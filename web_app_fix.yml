@@ -5,7 +5,7 @@
 
   tasks:
     - name: Wait a moment
-      ansible.builtin.pause: 
+      ansible.builtin.pause:
         seconds: 15
 
     - name: Start Web service
