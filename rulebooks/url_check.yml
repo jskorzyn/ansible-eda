@@ -8,10 +8,16 @@
         delay: 60
   rules:
     - name: Web App is down
-      condition: 
+      condition:
         event.url_check.status == "down"
       action:
         debug:
           msg: "WEB IS DOWN"
-#       run_playbook:
-#         name: redeploy_mobile_app.yml
+
+    - name: Fix Web App
+      condition:
+        event.url_check.status == "down"
+      action:
+        run_job_template:
+          name: Web App Fix
+          organization: demo
