@@ -1,5 +1,7 @@
 ---
 - name: Check Web URL
+  hosts: all
+  sources:
   ansible.eda.url_check:
     urls:
       - http://10.28.69.250:8080
