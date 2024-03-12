@@ -4,7 +4,7 @@
   sources:
     - ansible.eda.url_check:
         urls:
-          - http://10.28.69.194:8080
+          - http://10.28.69.246:8080
         delay: 10
   rules:
     - name: Fix Web App
