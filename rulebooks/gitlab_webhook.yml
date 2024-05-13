@@ -7,11 +7,8 @@
         port: 5000
   rules:
     - name: Test action
-#      condition: event.payload.message == "test"
       condition: event.payload.event_name == "push"
-#        event.url_check.status == "down"
       action:
-        debug:
-#        run_job_template:
-#          name: Web App Fix
-#          organization: Default
+        run_job_template:
+          name: EDA GitOps
+          organization: Default
