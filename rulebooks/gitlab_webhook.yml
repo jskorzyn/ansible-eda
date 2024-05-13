@@ -7,7 +7,7 @@
         port: 5000
   rules:
     - name: Test action
-      condition: event.message == "test"
+      condition: event.payload.message == "test"
 #        event.url_check.status == "down"
       action:
         debug:
