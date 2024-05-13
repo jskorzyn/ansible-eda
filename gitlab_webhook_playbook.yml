@@ -5,4 +5,4 @@
   tasks:
     - name: Include tasks for {{ env | default(dev) }}
       ansible.builtin.include_tasks:
-        "./tasks/{{ env | default(dev) }}-vm_settings.yml"
+        file: "./tasks/{{ env | default(dev) }}-vm_settings.yml"
