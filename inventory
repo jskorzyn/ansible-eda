@@ -1,1 +1,2 @@
-jsrh-demo ansible_host=10.28.69.183 env=dev
+[my_servers]
+jsrh-demo ansible_host=10.28.69.183
