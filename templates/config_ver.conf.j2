@@ -1,0 +1,3 @@
+Config state: 
+date: {{ '%Y-%m-%d %H:%M:%S' | ansible.builtin.strftime(ansible_eda.event.payload.commits[0].timestamp) }} 
+commit: {{  ansible_eda.event.payload.after }}

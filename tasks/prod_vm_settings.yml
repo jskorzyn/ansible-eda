@@ -1,10 +1,16 @@
 ---
-- name: Record config state
-  ansible.builtin.copy:
-    content: 'Config state: date: {{ ansible_eda.event.payload.commits[0].timestamp }} commit: {{ ansible_eda.event.payload.after }}'
-    dest: /etc/config_ver.conf
-    mode: '0644'
+# - name: Record config state
+#   ansible.builtin.copy:
+#     content: 'Config state: date: {{ ansible_eda.event.payload.commits[0].timestamp }} commit: {{ ansible_eda.event.payload.after }}'
+#     dest: /etc/config_ver.conf
+#     mode: '0644'
 
+- name: Record config state
+    ansible.builtin.template:
+      src: ./templates/cinfig_ver.conf.j2
+      dest: /etc/config_ver.conf
+      mode: '0644'
+      
 - name: Set rsyslog
   ansible.builtin.lineinfile:
     path: /etc/rsyslog.conf
