@@ -1,2 +1,2 @@
 [my_servers]
-jsrh-demo ansible_host=10.28.69.183
+jsrh-eda-demo-webhook ansible_host=10.28.69.178
