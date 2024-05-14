@@ -2,7 +2,7 @@
 - name: Record config state
   ansible.builtin.copy:
     content: 'Config state commit: {{ ansible_eda.event.payload.after }}'
-    dest: /etc/mine.conf
+    dest: /etc/test.conf
     mode: '0644'
 
 - name: Set rsyslog
