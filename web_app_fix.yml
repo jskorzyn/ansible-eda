@@ -1,11 +1,10 @@
 ---
 - name: Fix Web App
   hosts: all
-  #"{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit("hostname") | default("production")}}"
   gather_facts: false  
 
   tasks:
-    - name: test debug
+    - name: Host IP
       ansible.builtin.debug: 
         msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit('hostname') | default('production')}}"
     
