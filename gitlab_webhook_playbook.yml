@@ -5,7 +5,7 @@
   tasks:
     - name: Print variable event set by rulebook engine
       ansible.builtin.debug:
-        msg: '{{ test_event }}'
+        msg: '{{ test_event | default("Default Test") }}'
 
     # - name: Include tasks for {{ env | default(dev) }}
     #   ansible.builtin.include_tasks:
