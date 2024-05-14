@@ -12,6 +12,6 @@
         event.url_check.status == "down"
       actions:
         - debug:
-        # - run_job_template:
-        #     name: Web App Fix
-        #     organization: Default
+        - run_job_template:
+            name: Web App Fix
+            organization: Default
