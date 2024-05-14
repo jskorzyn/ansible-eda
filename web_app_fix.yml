@@ -6,7 +6,7 @@
   tasks:
     - name: Host IP
       ansible.builtin.debug: 
-        msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit('hostname') | default('production')}}"
+        msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit('hostname') }}"
     
     - name: Start Web service
       ansible.builtin.systemd:
