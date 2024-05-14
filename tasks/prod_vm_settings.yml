@@ -1,5 +1,4 @@
 ---
----
 - name: Record config state
   ansible.builtin.copy:
     content: 'Config state: date: {{ ansible_eda.event.payload.commits[0].timestamp }} commit: {{ ansible_eda.event.payload.after }}'
