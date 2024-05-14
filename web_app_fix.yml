@@ -1,7 +1,7 @@
 ---
 - name: Fix Web App
-  hosts: all
-  gather_facts: false
+  hosts: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit("hostname") }}"
+  gather_facts: false  
 
   tasks:
     - name: Start Web service
