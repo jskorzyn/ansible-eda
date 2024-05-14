@@ -1,7 +1,7 @@
 ---
 - name: Record config state
   ansible.builtin.copy:
-    content: 'Config state commit: {{ ansible_eda.event.payload.after }}'
+    content: 'Config state commit: {{ test_event }}'
     dest: /etc/test.conf
     mode: '0644'
 

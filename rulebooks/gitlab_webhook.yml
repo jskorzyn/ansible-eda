@@ -12,3 +12,6 @@
         run_job_template:
           name: EDA GitOps
           organization: Default
+          job_args:
+            extra_vars:
+              test_event: "{{ event.payload.after }}"
