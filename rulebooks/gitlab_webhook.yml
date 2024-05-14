@@ -13,4 +13,3 @@
         - run_job_template:
             name: EDA GitOps
             organization: Default
-            
