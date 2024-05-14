@@ -4,13 +4,14 @@
   sources:
     - ansible.eda.url_check:
         urls:
-          - http://10.28.69.246:8080
+          - http://10.28.69.221:8080
         delay: 10
-  rules:
+  rules:      
     - name: Fix Web App
       condition:
         event.url_check.status == "down"
-      action:
-        run_job_template:
-          name: Web App Fix
-          organization: Default
+      actions:
+        - debug:     
+        # - run_job_template:
+        #     name: Web App Fix
+        #     organization: Default
