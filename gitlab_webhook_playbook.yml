@@ -3,6 +3,10 @@
   hosts: all
 
   tasks:
+    - name: Print variable event set by rulebook engine
+      ansible.builtin.debug:
+        msg: '{{ ansible_eda.event }}'
+
     - name: Include tasks for {{ env | default(dev) }}
       ansible.builtin.include_tasks:
         file: "./tasks/{{ env | default(dev) }}_vm_settings.yml"
