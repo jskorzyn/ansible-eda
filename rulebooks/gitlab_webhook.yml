@@ -14,4 +14,4 @@
           organization: Default
           job_args:
             extra_vars:
-              test_event: "{{ event.payload.after }}"
+              test_event: "{{ event.payload.event_name }}"
