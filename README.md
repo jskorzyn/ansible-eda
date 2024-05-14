@@ -38,3 +38,13 @@ curl -H 'Content-Type: application/json' -d "{\"message\": \"test\"}" 10.28.20.1
 
 * 10.28.20.18 - EDA controller IP
 * port 5000 - webhook plugin listening port
+
+## 3. EDA GitOps
+
+### GitLab Webhook definition
+
+```html
+http://10.28.20.18:5000/endpoint
+
+Trigger: Push
+```
