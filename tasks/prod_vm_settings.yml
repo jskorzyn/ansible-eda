@@ -1,1 +1,26 @@
 ---
+---
+- name: Record config state
+  ansible.builtin.copy:
+    content: 'Config state: date: {{ ansible_eda.event.payload.commits[0].timestamp }} commit: {{ ansible_eda.event.payload.after }}'
+    dest: /etc/config_ver.conf
+    mode: '0644'
+
+- name: Set rsyslog
+  ansible.builtin.lineinfile:
+    path: /etc/rsyslog.conf
+    line: "*.*    /var/log/custom_logs"
+    state: absent
+  register: rsyslog_status
+
+- name: Restart rsyslog service
+  ansible.builtin.systemd_service:
+    name: rsyslog
+    state: restarted
+  when: rsyslog_status.changed
+
+- name: Stop firewalld
+  ansible.builtin.systemd_service:
+    name: firewalld
+    state: started
+    enabled: false
