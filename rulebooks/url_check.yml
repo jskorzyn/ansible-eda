@@ -6,12 +6,12 @@
         urls:
           - http://10.28.69.221:8080
         delay: 10
-  rules:      
+  rules:
     - name: Fix Web App
       condition:
         event.url_check.status == "down"
       actions:
-        - debug:     
+        - debug:
         # - run_job_template:
         #     name: Web App Fix
         #     organization: Default
