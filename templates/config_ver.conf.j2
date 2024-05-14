@@ -1,3 +1,3 @@
 Config state: 
-date: {{ ansible_eda.event.payload.commits[0].timestamp | to_datetime('%Y%m%d') }} 
+date: {{ ansible_eda.event.payload.commits[0].timestamp }} 
 commit: {{  ansible_eda.event.payload.after }}
