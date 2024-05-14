@@ -6,9 +6,9 @@
 
   tasks:
     - name: test debug
-      ansible.builtin.debug:
-        debug: 
-          msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit('hostname') | default('production')}}"
+      ansible.builtin.debug: 
+        msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit('hostname') | default('production')}}"
+    
     - name: Start Web service
       ansible.builtin.systemd:
         name: nginx
