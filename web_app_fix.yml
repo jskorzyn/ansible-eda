@@ -1,6 +1,6 @@
 ---
 - name: Fix Web App
-  hosts: all 
+  hosts: all
   #"{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit("hostname") | default("production")}}"
   gather_facts: false  
 
@@ -8,7 +8,7 @@
     - name: test debug
       ansible.builtin.debug:
         debug: 
-          msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit("hostname") | default("production")}}"
+          msg: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit('hostname') | default('production')}}"
     - name: Start Web service
       ansible.builtin.systemd:
         name: nginx
