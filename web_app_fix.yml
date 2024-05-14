@@ -1,6 +1,6 @@
 ---
 - name: Fix Web App
-  hosts: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit("hostname") }}"
+  hosts: "{{ ansible_eda.event.url_check.url | ansible.builtin.urlsplit("hostname") | default("production")}}"
   gather_facts: false  
 
   tasks:
