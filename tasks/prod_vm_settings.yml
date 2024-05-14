@@ -6,10 +6,10 @@
 #     mode: '0644'
 
 - name: Record config state
-    ansible.builtin.template:
-      src: ./templates/config_ver.conf.j2
-      dest: /etc/config_ver.conf
-      mode: '0644'
+  ansible.builtin.template:
+    src: ./templates/config_ver.conf.j2
+    dest: /etc/config_ver.conf
+    mode: '0644'
 
 - name: Set rsyslog
   ansible.builtin.lineinfile:
