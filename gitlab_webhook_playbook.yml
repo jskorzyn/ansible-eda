@@ -6,8 +6,3 @@
     - name: Include tasks for {{ env | default(dev) }}
       ansible.builtin.include_tasks:
         file: "./tasks/{{ env | default(dev) }}_vm_settings.yml"
-
-#     - name: Print variable event set by rulebook engine
-#       ansible.builtin.debug:
-#         msg: '{{ ansible_eda.event | default("Default Test") }}'
-# #        msg: '{{ test_event | default("Default Test") }}'
