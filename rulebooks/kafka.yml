@@ -12,12 +12,12 @@
     - name: Get Payload Info
       condition:
         all:
-#          - event.body is defined
-          - body is search("mybrokenapp.service", ignorecase=true)
-          - body is search("Failed", ignorecase=true)
+          - event.body is defined
+          - event.body == "mybrokenapp.service: Failed with result 'exit-code'"
+#          - body is search("Failed", ignorecase=true)
       actions:
         - debug:
-            msg: "{{ body }}"
+            msg: "{{ event.body }}"
 
         # - run_job_template:
         #     name: LLM - Failed Job Data
