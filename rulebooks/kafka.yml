@@ -13,8 +13,8 @@
       condition:
         all:
           - event.body is defined
-          - event.body is search("mybrokenapp.service: Failed", ignorecase=true)
-
+          - event.body is search("mybrokenapp.service", ignorecase=true)
+          - event.body is search("Failed", ignorecase=true)
       actions:
         - debug:
             msg: "{{ event.body }}"
