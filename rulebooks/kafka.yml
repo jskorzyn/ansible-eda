@@ -10,9 +10,11 @@
 
   rules:
     - name: Get Payload Info
-      condition: event.body is defined
-#        all:
-#          - event.payload.status == "failed"
+      condition:
+        all:
+          - event.body is defined
+          - event.body is search("mybrokenapp.service: Failed", ignorecase=true)
+
       actions:
         - debug:
             msg: "{{ event.body }}"
