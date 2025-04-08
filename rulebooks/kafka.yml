@@ -13,11 +13,12 @@
       condition:
         all:
           - event.body is defined
+          - event.body is search("error", ignorecase=true)
 #          - event.body == "mybrokenapp.service: Failed with result 'exit-code'"
-#          - body is search("Failed", ignorecase=true)
+#          - event.body is search("error", ignorecase=true)
       actions:
         - debug:
-            msg: "{{ event.body }}"
+            msg: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAA {{ event.body }} BBBBBBBBBBBBBBBBBBBBBBBBBB"
 
         # - run_job_template:
         #     name: LLM - Failed Job Data
