@@ -1,0 +1,20 @@
+---
+- name: Servicenow test
+  hosts: localhost
+
+  vars:
+    snow_host: 'https://dev277079.service-now.com'
+    snow_user: 'admin'
+    snow_password: 'AdgDb4P!Y0x+'
+
+  tasks:
+    - name: Create servicenow incident
+      servicenow.itsm.incident:
+        instance:
+          host: "{{ snow_host }}"
+          username: "{{ snow_user }}"
+          password: "{{ snow_password }}"
+        state: new
+        caller: admin
+        short_description: "Ansible job failure for job ID 007"
+        description: "Test Decription"
