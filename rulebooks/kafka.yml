@@ -10,9 +10,9 @@
 
   rules:
     - name: Get Payload Info
-      condition:
-        all:
-          - event.payload.status == "failed"
+      condition: event.body is defined
+#        all:
+#          - event.payload.status == "failed"
       actions:
         - debug:
             msg: "{{ event.payload }}"
