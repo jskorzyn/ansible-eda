@@ -1,0 +1,20 @@
+---
+- name: Kafka With OpenAI
+  hosts: all
+  sources:
+    - ansible.eda.kafka:
+        host: 10.28.20.23
+        port: 9092
+
+  rules:
+    - name: Get Payload Info
+      condition:
+        all:
+          - event.payload.status == "failed"
+      actions:
+        - debug:
+            msg: "{{ event.payload }}"
+
+        # - run_job_template:
+        #     name: LLM - Failed Job Data
+        #     organization: MackNet
