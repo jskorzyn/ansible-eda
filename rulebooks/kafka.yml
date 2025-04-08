@@ -10,15 +10,18 @@
 
   rules:
     - name: Get Payload Info
-      condition:
-        all:
-          - event.body is defined
-          - event.body is search("error", ignorecase=true)
+      condition: event.body is search("error", ignorecase=true)
+#        all:
+#          - event.body is defined
+#          - event.body is search("error", ignorecase=true)
 #          - event.body == "mybrokenapp.service: Failed with result 'exit-code'"
 #          - event.body is search("error", ignorecase=true)
       actions:
         - debug:
-            msg: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAA {{ event.body }} BBBBBBBBBBBBBBBBBBBBBBBBBB"
+            msg: "{{ event.body }}"
+        
+        - debug:
+            msg: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
         # - run_job_template:
         #     name: LLM - Failed Job Data
