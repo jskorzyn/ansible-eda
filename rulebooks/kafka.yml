@@ -15,7 +15,7 @@
 #          - event.payload.status == "failed"
       actions:
         - debug:
-            msg: "{{ event.payload }}"
+            msg: "{{ event.body }}"
 
         # - run_job_template:
         #     name: LLM - Failed Job Data
