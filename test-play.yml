@@ -1,0 +1,8 @@
+---
+- name: Test OCP AAP deployment
+  hosts: localhost
+
+  tasks:
+    - name: Wait a minute
+      ansible.builtin.pause:
+        minutes: 1
