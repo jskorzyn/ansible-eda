@@ -29,3 +29,7 @@
     name: firewalld
     state: started
     enabled: false
+
+- name: Make it sleep for 15s
+  ansible.builtin.pause:
+    seconds: 15
