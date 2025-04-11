@@ -19,7 +19,7 @@
       actions:
         - debug:
             msg: "{{ event.body }}"
-        
+
         - debug:
             msg: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
